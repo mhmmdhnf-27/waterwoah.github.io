@@ -1,0 +1,470 @@
+/* Reset dan Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    background-color: #0f172a; /* Latar belakang utama (Biru Sangat Tua) */
+    color: #e2e8f0; /* Teks utama (Abu-abu Cerah) */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Header */
+header {
+    background: #1e293b; /* Latar belakang header (Biru Tua/Abu) */
+    color: white;
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Bayangan lebih gelap */
+    transition: background 0.3s ease;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.logo:hover {
+    color: #cbd5e1;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none; /* Menghapus 'white' yang salah dari properti */
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #cbd5e1;
+}
+
+.mobile-toggle {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: white;
+}
+
+/* Hero Section (Main Page) */
+.hero {
+    /* Menggunakan overlay yang lebih gelap agar konsisten */
+    background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), 
+                url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') center/cover no-repeat;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    margin-top: 80px; /* Adjust for fixed header */
+}
+
+.hero-overlay {
+    width: 100%;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    animation: fadeInUp 1s ease;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    animation: fadeInUp 1s ease 0.2s both;
+}
+
+/* Tombol CTA tetap cerah sebagai aksen */
+.cta-button {
+    background: #3b82f6;
+    color: white;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: background 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+    animation: fadeInUp 1s ease 0.4s both;
+}
+
+.cta-button:hover {
+    background: #2563eb; /* Sedikit lebih cerah saat hover */
+    transform: translateY(-2px);
+}
+
+/* Page Hero (Untuk Halaman Lain) */
+/* Gradient ini tetap bagus di dark mode */
+.page-hero {
+    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+    color: white;
+    padding: 4rem 0;
+    text-align: center;
+    margin-top: 80px;
+}
+
+.page-hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.page-hero p {
+    font-size: 1.1rem;
+}
+
+/* Sections General */
+section {
+    padding: 4rem 0;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #3b82f6; /* Menggunakan warna aksen biru */
+}
+
+/* News Teaser/Grid */
+.news-teaser,
+.news-content,
+.services-content {
+    background: #182235; /* Latar belakang section (sedikit lebih cerah dari body) */
+    padding: 4rem 0;
+}
+
+.news-grid,
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.news-card,
+.service-card {
+    background: #1e293b; /* Latar belakang kartu (sama dengan header) */
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.news-card:hover,
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.news-card img,
+.service-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.news-card .news-meta,
+.service-card h3 {
+    padding: 1rem;
+}
+
+.news-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    color: #94a3b8; /* Teks sekunder (Abu-abu) */
+    border-bottom: 1px solid #334155; /* Garis pemisah gelap */
+    padding-bottom: 0.5rem;
+}
+
+.news-card h3,
+.service-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: #e2e8f0; /* Teks judul kartu (Abu-abu Cerah) */
+}
+
+.news-card p,
+.service-card p {
+    padding: 0 1rem;
+    color: #94a3b8; /* Teks sekunder (Abu-abu) */
+    margin-bottom: 1rem;
+}
+
+.news-card a,
+.service-card a {
+    display: inline-block;
+    padding: 0 1rem 1rem;
+    color: #3b82f6; /* Teks link (Aksen Biru) */
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.news-card a:hover,
+.service-card a:hover {
+    color: #60a5fa; /* Biru lebih cerah saat hover */
+}
+
+/* Full News Card (untuk news.html) */
+.news-card.full {
+    grid-column: 1 / -1;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.news-card.full img {
+    height: 300px;
+}
+
+/* About Content */
+.about-content {
+    padding: 4rem 0;
+    /* Mewarisi background body */
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.about-text h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #3b82f6; /* Aksen Biru */
+}
+
+.about-text ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.about-text li {
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+    color: #cbd5e1; /* Teks list item */
+}
+
+.about-text li::before {
+    content: "•";
+    color: #3b82f6; /* Aksen Biru */
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Contact Content */
+.contact-content {
+    padding: 4rem 0;
+    background: #182235; /* Latar belakang section */
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+}
+
+.contact-info h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #3b82f6; /* Aksen Biru */
+}
+
+.contact-item {
+    margin-bottom: 1.5rem;
+}
+
+.contact-item h3 {
+    font-size: 1.2rem;
+    color: #3b82f6; /* Aksen Biru */
+    margin-bottom: 0.5rem;
+}
+
+.contact-item p {
+    color: #94a3b8; /* Teks sekunder */
+}
+
+.contact-form {
+    background: #1e293b; /* Latar belakang kartu */
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.contact-form h2 {
+    margin-bottom: 1.5rem;
+    color: #e2e8f0; /* Teks judul form */
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #e2e8f0; /* Teks label */
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #334155; /* Border gelap */
+    background-color: #0f172a; /* Latar belakang input (paling gelap) */
+    color: #e2e8f0; /* Teks input */
+    border-radius: 5px;
+    font-family: inherit;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #3b82f6; /* Aksen Biru saat focus */
+}
+
+.form-group textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+.submit-btn {
+    background: #3b82f6; /* Aksen Biru */
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    width: 100%;
+}
+
+.submit-btn:hover {
+    background: #2563eb;
+}
+
+/* Footer */
+footer {
+    background: #1e293b; /* Latar belakang footer (sama dengan header) */
+    color: #94a3b8; /* Teks sekunder/muted */
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 4rem;
+}
+
+footer p {
+    opacity: 0.9;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .mobile-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #1e293b; /* Latar belakang menu mobile (sama dengan header) */
+        flex-direction: column;
+        padding: 1rem 0;
+        gap: 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        padding: 0.5rem 1rem;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .page-hero h1 {
+        font-size: 2rem;
+    }
+
+    .about-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .news-grid,
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    section {
+        padding: 3rem 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 0.5rem;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+}
